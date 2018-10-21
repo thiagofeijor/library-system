@@ -1,0 +1,68 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from "@angular/core";
+import {
+  MatButtonModule,
+  MatCardModule,
+  MatGridListModule,
+  MatListModule,
+  MatDividerModule,
+  MatExpansionModule,
+  MatIconModule,
+  MatProgressBarModule,
+  MatTooltipModule,
+  MatDialogModule,
+  MatSidenavModule,
+  MatToolbarModule,
+  MatAutocompleteModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatRadioModule,
+} from "@angular/material";
+
+@NgModule({
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+  ],
+  exports: [
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatButtonModule,
+    MatCardModule,
+    MatGridListModule,
+    MatListModule,
+    MatDividerModule,
+    MatExpansionModule,
+    MatIconModule,
+    MatProgressBarModule,
+    MatTooltipModule,
+    MatDialogModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatAutocompleteModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatRadioModule,
+  ],
+  providers: [],
+})
+export class AppCommonModule {}

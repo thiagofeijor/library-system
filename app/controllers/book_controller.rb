@@ -1,9 +1,20 @@
 class BookController < ApplicationController
+    skip_before_action :authorize_request, only: [:index, :show]
     before_action :set_book, only: [:show, :update, :destroy]
 
     # GET /book
     def index
-      @books = Book.all
+      if (params[:query]) 
+        @books = Book.where(["title like ? or description like ? or author like ?", "%#{params[:title]}%", "%#{params[:title]}%", "%#{params[:title]}%"])
+      else 
+        @books = Book.all
+      end
+
+      if (params[:sort]) 
+        sort = params[:sort] == "1" ? :desc : :asc;
+        @books = @books.order(title: sort)
+      end
+
       json_response(@books)
     end
   

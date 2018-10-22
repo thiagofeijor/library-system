@@ -8,5 +8,4 @@ RSpec.describe Book, type: :model do
   it { should validate_presence_of(:description) }
   it { should validate_presence_of(:cover) }
   it { should validate_presence_of(:author) }
-  it { should validate_presence_of(:created_by) }
 end

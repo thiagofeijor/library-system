@@ -55,11 +55,11 @@ RSpec.describe 'Books API', type: :request do
   # Test suite for POST /book
   describe 'POST /book' do
     let(:valid_attributes) do
-        { title: 'Rails', description: 'book', cover: "me", author: 'me', created_by: user.id.to_s }
+      { title: 'Rails', description: 'book', cover: "me", author: 'me' }.to_json
     end
 
     context 'when the request is valid' do
-      before { post '/book', valid_attributes, headers: headers, as: :json }
+      before { post '/book', valid_attributes, headers }
 
       it 'creates a book' do
         expect(json['title']).to eq('Rails')
@@ -71,8 +71,10 @@ RSpec.describe 'Books API', type: :request do
     end
 
     context 'when the request is invalid' do
-      let(:invalid_attributes) { { title: nil } }
-      before { post '/book', invalid_attributes, headers: headers }
+      let(:invalid_attributes) do
+        { title: nil }.to_json
+      end
+      before { post '/book', invalid_attributes, headers }
 
       it 'returns status code 422' do
         expect(response).to have_http_status(422)
@@ -80,17 +82,19 @@ RSpec.describe 'Books API', type: :request do
 
       it 'returns a validation failure message' do
         expect(response.body)
-          .to match(/Validation failed: Created by can't be blank/)
+          .to match(/Validation failed: Title can't be blank, Description can't be blank, Cover can't be blank, Author can't be blank/)
       end
     end
   end
 
   # Test suite for PUT /book/:id
   describe 'PUT /book/:id' do
-    let(:valid_attributes) { { title: 'Shopping' } }
+    let(:valid_attributes) do
+      { title: 'Shopping' }.to_json
+    end
 
     context 'when the record exists' do
-      before { put "/book/#{book_id}", valid_attributes, headers: headers }
+      before { put "/book/#{book_id}", valid_attributes, headers }
 
       it 'updates the record' do
         expect(response.body).to be_empty
@@ -104,7 +108,7 @@ RSpec.describe 'Books API', type: :request do
 
   # Test suite for DELETE /book/:id
   describe 'DELETE /book/:id' do
-    before { delete "/book/#{book_id}", params: {}, headers: headers }
+    before { delete "/book/#{book_id}", {}, headers }
 
     it 'returns status code 204' do
       expect(response).to have_http_status(204)

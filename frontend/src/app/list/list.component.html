@@ -20,8 +20,8 @@
 
 <div id="content">
 
-  <div id="btn-sort"  matSort (matSortChange)="sortData($event)">
-    <span mat-sort-header="name" [start]="sort">Título</span>
+  <div id="btn-sort" matSort (matSortChange)="sortData($event)">
+    <span mat-sort-header="name" matTooltip="Clique aqui para ordernar" [start]="sort">Título</span>
   </div>
 
   <p class="message" *ngIf="(books$ | async)?.length == 0">Nenhum registro</p>
@@ -30,7 +30,7 @@
 
     <mat-card class="card" *ngFor="let item of books$ | async">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
+        <img class="cover" [src]="item.cover">
         <mat-card-title>{{ item.title }}</mat-card-title>
         <mat-card-subtitle>{{ item.author }}</mat-card-subtitle>
       </mat-card-header>

@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Router, CanLoad, Route } from '@angular/router';
+import { Router, CanLoad, CanActivate, Route, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AppService } from './app.service';
-import { FindValueSubscriber } from 'rxjs/internal/operators/find';
 
 @Injectable()
-export class AuthGuard implements CanLoad {
+export class AuthGuard implements CanLoad, CanActivate {
 
   constructor(
     private router: Router,
@@ -13,6 +12,17 @@ export class AuthGuard implements CanLoad {
   ) { }
 
   canLoad(route: Route): Observable<boolean>|Promise<boolean>|boolean {
+    return this.hasPermission();
+  }
+
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ): Observable<boolean>|Promise<boolean>|boolean {
+    return this.hasPermission();
+  }
+
+  hasPermission() {
     let token = localStorage.getItem('token');
     
     if (token) {
@@ -20,7 +30,7 @@ export class AuthGuard implements CanLoad {
         return Promise.resolve(true);
       }).catch(() => {
         this.router.navigate(['/login']);
-        return Promise.reject(FindValueSubscriber);
+        return Promise.reject(false);
       });
     } else {
       this.router.navigate(['/login']);

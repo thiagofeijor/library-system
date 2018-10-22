@@ -1,7 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+$candy-app-primary: mat-palette($mat-teal);
+$candy-app-accent: mat-palette($mat-teal, A200, A100, A400);
+$candy-app-warn: mat-palette($mat-red);
+$candy-app-theme: mat-light-theme($candy-app-primary, $candy-app-accent, $candy-app-warn);
+@include angular-material-theme($candy-app-theme);
 
 body, html {
   margin: 0px;
   font-family: 'Montserrat', sans-serif;
+}
+
+#preloader {
+    margin: 0px auto;
+}
+
+#content {
+    width: 70vw;
+    margin: 5px 15vw;
+}
+
+@media (max-width: 500px) 
+{
+    #content {
+        width: 90vw;
+        margin: 5px 5vw;
+    }
+}
+
+.message {
+    text-align: center;
+}
+
+.spinner {
+    margin: 0px auto;
+}
+
+.cover {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;  
 }

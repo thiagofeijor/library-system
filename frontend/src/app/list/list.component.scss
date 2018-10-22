@@ -1,0 +1,22 @@
+#filter-bar {
+    width: 100%;
+}
+
+#btn-sort {
+    display: flex;
+    align-items: flex-end;
+    color: gray;
+    font-weight: bolder;
+    padding: 25px 0px 10px 0px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #a79f9f98;
+} 
+
+.card {
+    margin: 10px 0px;
+}
+
+.mat-card-header {
+    justify-content: flex-end;
+    flex-direction: row-reverse !important; 
+}

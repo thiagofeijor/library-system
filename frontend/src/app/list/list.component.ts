@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewEncapsulation } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { shareReplay, debounceTime } from 'rxjs/operators';
 
@@ -8,7 +8,8 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
+  styleUrls: ['./list.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class ListComponent implements OnInit, OnDestroy {
   sort = 'asc';

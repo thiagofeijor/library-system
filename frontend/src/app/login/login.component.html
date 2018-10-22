@@ -1,3 +1,37 @@
-<p>
-  login works!
-</p>
+<div id="loader" *ngIf="inRequest">
+	<mat-spinner class="spinner"></mat-spinner>
+</div>
+	
+<div class="wrapper">
+	<div class="container">
+		<h1>Bem-vindo</h1>
+    
+    <form [formGroup]="loginGroup" class="form">
+
+      <mat-form-field class="full-width">
+        <input type="text" matInput formControlName="email" placeholder="Login" autocomplete="off">
+      </mat-form-field>
+
+      <mat-form-field class="full-width">
+        <input type="password" matInput formControlName="password" placeholder="Senha" autocomplete="off">
+      </mat-form-field>
+
+      <button mat-raised-button (click)="login()">Entrar</button>
+      
+      <p routerLink="/" id="lk-back">Voltar</p>
+    </form>
+	</div>
+	
+	<ul class="bg-bubbles">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	</ul>
+</div>

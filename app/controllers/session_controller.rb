@@ -1,10 +1,12 @@
 class SessionController < ApplicationController
 
-  def session
-    if headers['Authorization'].present?
-      head :no_content
+  def check
+    # Check if you have a current user
+    if (@current_user) 
+      head 200
+    else
+      head 401
     end
-      head :no_content
   end
 
 end

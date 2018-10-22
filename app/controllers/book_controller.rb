@@ -45,7 +45,7 @@ class BookController < ApplicationController
   
     def book_params
       # whitelist params
-      params.permit(:title, :description, :cover, :author, :created_by)
+      params.permit(:title, :description, :cover, :author)
     end
   
     def set_book

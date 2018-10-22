@@ -2,6 +2,56 @@
   <span>Cadastros</span>
   <span style="flex: 1;"></span>
   <button mat-icon-button (click)="logoff()">
-    <mat-icon>supervised_user_circle</mat-icon>
+    <mat-icon>exit_to_app</mat-icon>
   </button>
 </mat-toolbar>
+
+<div id="content">
+  <mat-accordion>
+    <mat-expansion-panel [(expanded)]="isExpanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Cadastro de livros
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form [formGroup]="bookGroup" class="form">
+        <mat-form-field>
+          <input matInput formControlName="title" placeholder="Título">
+        </mat-form-field>
+
+        <mat-form-field>
+          <input matInput formControlName="author" placeholder="Autor">
+        </mat-form-field>
+
+        <mat-form-field>
+          <img class="cover" [src]="bookGroup.value.cover" *ngIf="isValidCover()">
+          <input matInput formControlName="cover" placeholder="Capa (URL)">
+        </mat-form-field>
+
+        <mat-form-field>
+          <textarea matInput formControlName="description" placeholder="Descrição"></textarea>
+        </mat-form-field>
+
+        <button mat-raised-button (click)="reset()">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+      </form>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <p class="message" *ngIf="(books$ | async)?.length == 0">Nenhum registro</p>
+
+  <div *ngIf="books$ | async; else loading">
+    <mat-list class="list" role="list" *ngFor="let item of books$ | async">
+      <mat-list-item role="listitem">
+        <i class="btn-action material-icons" (click)="delete(item)">delete_outline</i>
+        <i class="btn-action material-icons" (click)="edit(item)">edit</i>
+        {{ item.title }}
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <ng-template #loading>
+    <mat-spinner class="spinner"></mat-spinner>
+  </ng-template>
+
+</div>

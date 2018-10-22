@@ -11,7 +11,8 @@ const appRoutes: Routes = [
   {
     path: "admin",
     loadChildren: "src/app/admin/admin.module#AdminModule",
-    canLoad: [AuthGuard]
+    canLoad: [AuthGuard],
+    canActivate: [AuthGuard],
   }
 ];
 

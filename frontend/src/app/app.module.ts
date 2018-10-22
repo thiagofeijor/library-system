@@ -6,10 +6,11 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppCommonModule } from "./common.module";
 import { ListComponent } from "./list/list.component";
+import { LoginComponent } from './login/login.component';
 import { AuthGuard } from "./auth.guard";
 
 @NgModule({
-  declarations: [AppComponent, ListComponent],
+  declarations: [AppComponent, ListComponent, LoginComponent],
   imports: [
     BrowserModule, 
     BrowserAnimationsModule,

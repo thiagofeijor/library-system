@@ -19,6 +19,8 @@ import {
   MatFormFieldModule,
   MatInputModule,
   MatRadioModule,
+  MatSortModule,
+  MatProgressSpinnerModule,
 } from "@angular/material";
 
 @NgModule({
@@ -42,6 +44,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
   ],
   exports: [
     ReactiveFormsModule,
@@ -62,6 +66,8 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatRadioModule,
+    MatSortModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
 })

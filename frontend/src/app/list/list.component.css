@@ -1,0 +1,39 @@
+#filter-bar {
+    width: 100%;
+}
+
+#btn-sort {
+    display: flex;
+    align-items: flex-end;
+    color: gray;
+    font-weight: bolder;
+} 
+
+#preloader {
+    margin: 0px auto;
+}
+
+#content {
+    width: 70vw;
+    margin: 5px 15vw;
+}
+
+@media (max-width: 500px) 
+{
+    #content {
+        width: 90vw;
+        margin: 5px 5vw;
+    }
+}
+
+.card {
+    margin: 10px 0px;
+}
+
+.message {
+    text-align: center;
+}
+
+.spinner {
+    margin: 0px auto;
+}

@@ -1,3 +1,44 @@
-<p>
-  list works!
-</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button (click)="toggleBar()">
+      <mat-icon *ngIf="!filterBar">search</mat-icon>
+      <mat-icon *ngIf="filterBar">close</mat-icon>
+    </button>
+    <span>Library System</span>
+    <span style="flex: 1;"></span>
+    <button mat-icon-button routerLink="/admin">
+      <mat-icon>supervised_user_circle</mat-icon>
+    </button>
+  </mat-toolbar-row>
+
+  <mat-toolbar-row *ngIf="filterBar">
+    <mat-form-field id="filter-bar">
+      <input matInput placeholder="Filtro" [formControl]="iFilter">
+    </mat-form-field>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<div id="content">
+
+  <div id="btn-sort"  matSort (matSortChange)="sortData($event)">
+    <span mat-sort-header="name" [start]="sort">Título</span>
+  </div>
+
+  <p class="message" *ngIf="(books$ | async)?.length == 0">Nenhum registro</p>
+
+  <div *ngIf="books$ | async; else loading">
+
+    <mat-card class="card" *ngFor="let item of books$ | async">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{ item.title }}</mat-card-title>
+        <mat-card-subtitle>{{ item.author }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p> {{ item.description }} </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <ng-template #loading><mat-spinner class="spinner"></mat-spinner></ng-template>
+    
+</div>

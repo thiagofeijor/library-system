@@ -6,6 +6,7 @@ import { AuthGuard } from "./auth.guard";
 
 const appRoutes: Routes = [
   { path: "", component: ListComponent },
+  { path: 'login', component: LoginComponent },
   {
     path: "admin",
     loadChildren: "src/app/admin/admin.module#AdminModule",

@@ -5,13 +5,13 @@ class BookController < ApplicationController
     # GET /book
     def index
       if (params[:query]) 
-        @books = Book.where(["title like ? or description like ? or author like ?", "%#{params[:title]}%", "%#{params[:title]}%", "%#{params[:title]}%"])
+        @books = Book.where(["title like ? or description like ? or author like ?", "%#{params[:query]}%", "%#{params[:query]}%", "%#{params[:query]}%"])
       else 
         @books = Book.all
       end
 
       if (params[:sort]) 
-        sort = params[:sort] == "1" ? :desc : :asc;
+        sort = params[:sort] == "asc" ? :asc : :desc;
         @books = @books.order(title: sort)
       end
 

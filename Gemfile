@@ -28,6 +28,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jwt'
 gem 'pry-meta'
 gem 'pry-rails'
+gem 'rack-cors'
 gem 'active_model_serializers', '~> 0.10.0'
 
 # Use Unicorn as the app server

@@ -30,7 +30,7 @@ Dentro de ./frontend/src/environments/environment.prod.ts você poderá mudar o 
 
 Para buildar o projeto `ng build --aot --prod`.
 
-=== Considerações
+## Considerações
 
 * Para autenticação foi usado a gem 'jwt'.
 

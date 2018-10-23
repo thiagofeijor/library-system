@@ -4,7 +4,7 @@
 
 Nesse repositório você vai encontrar um projeto RubyOnRails que está servindo de backend para uma aplicação angular. Ambos são uns sitema simples de livros.
 
-##Como iniciar
+=== Como iniciar
 
 Backend
 
@@ -30,7 +30,7 @@ Dentro de ./frontend/src/environments/environment.prod.ts você poderá mudar o 
 
 Para buildar o projeto `ng build --aot --prod`.
 
-##Considerações
+=== Considerações
 
 * Para autenticação foi usado a gem 'jwt'.
 

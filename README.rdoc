@@ -1,28 +1,40 @@
-== README
+== Library System
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# O que você vai encontrar aqui
 
-Things you may want to cover:
+Nesse repositório você vai encontrar um projeto RubyOnRails que está servindo de backend para uma aplicação angular. Ambos são uns sitema simples de livros.
 
-* Ruby version
+# Como iniciar
 
-* System dependencies
+Backend
 
-* Configuration
+Tenha instalado ruby, rails e o postgress.
 
-* Database creation
+Faça a instalação das dependencias.
 
-* Database initialization
+Execute a aplicação com `rails s`
 
-* How to run the test suite
+Para rodar os testes execute `bundle exec rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
+--------
 
-* Deployment instructions
+Frontend
 
-* ...
+Faça a instalação do cli do angular `npm install -g @angular/cli` caso não tenha ainda.
 
+Dentro da pasta ./frontend instale as dependenciais.
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Execute a aplicação com `ng serve --open`(endpoint está em localhost:3000).
+
+Dentro de ./frontend/src/environments/environment.prod.ts você poderá mudar o endpoint da aplicação.
+
+Para buildar o projeto `ng build --aot --prod`.
+
+# Considerações
+
+* Para autenticação foi usado a gem 'jwt'.
+
+* A rota /signup foi mantida sem autenticação para que possa ser feita a criação de usuários. Como não possui interface visual pode ser feita via curl ou postman.
+Requer apenas um json com name, email, password e password_confirmation.
+
+* Frontend foi feito com angular usando os componentes do material design. Rota /admin foi feita em lazy load com um guard que valida a sessão antes de carregar o font para a rota.

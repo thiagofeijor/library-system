@@ -1,10 +1,10 @@
-== Library System
+# Library System
 
-=== O que você vai encontrar aqui
+## O que você vai encontrar aqui
 
 Nesse repositório você vai encontrar um projeto RubyOnRails que está servindo de backend para uma aplicação angular. Ambos são uns sitema simples de livros.
 
-=== Como iniciar
+## Como iniciar
 
 Backend
 
@@ -12,23 +12,23 @@ Tenha instalado ruby, rails e o postgress.
 
 Faça a instalação das dependencias.
 
-Execute a aplicação com `$ rails s`
+Execute a aplicação com `rails s`
 
-Para rodar os testes execute `$ bundle exec rspec`
+Para rodar os testes execute `bundle exec rspec`
 
 --------
 
 Frontend
 
-Faça a instalação do cli do angular `$ npm install -g @angular/cli` caso não tenha ainda.
+Faça a instalação do cli do angular `npm install -g @angular/cli` caso não tenha ainda.
 
 Dentro da pasta ./frontend instale as dependenciais.
 
-Execute a aplicação com `$ ng serve --open`(endpoint está em localhost:3000).
+Execute a aplicação com `ng serve --open`(endpoint está em localhost:3000).
 
 Dentro de ./frontend/src/environments/environment.prod.ts você poderá mudar o endpoint da aplicação.
 
-Para buildar o projeto `$ ng build --aot --prod`.
+Para buildar o projeto `ng build --aot --prod`.
 
 === Considerações
 

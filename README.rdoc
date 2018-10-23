@@ -1,6 +1,6 @@
 == Library System
 
-##O que você vai encontrar aqui
+=== O que você vai encontrar aqui
 
 Nesse repositório você vai encontrar um projeto RubyOnRails que está servindo de backend para uma aplicação angular. Ambos são uns sitema simples de livros.
 

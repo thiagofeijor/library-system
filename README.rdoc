@@ -34,7 +34,6 @@ Para buildar o projeto `ng build --aot --prod`.
 
 * Para autenticação foi usado a gem 'jwt'.
 
-* A rota /signup foi mantida sem autenticação para que possa ser feita a criação de usuários. Como não possui interface visual pode ser feita via curl ou postman.
-Requer apenas um json com name, email, password e password_confirmation.
+* A rota /signup foi mantida sem autenticação para que possa ser feita a criação de usuários. Como não possui interface visual pode ser feita via curl ou postman. Requer apenas um json com name, email, password e password_confirmation.
 
 * Frontend foi feito com angular usando os componentes do material design. Rota /admin foi feita em lazy load com um guard que valida a sessão antes de carregar o font para a rota.

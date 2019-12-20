@@ -114,7 +114,7 @@ GEM
     pry-remote (0.1.8)
       pry (~> 0.9)
       slop (~> 3.0)
-    rack (1.6.10)
+    rack (1.6.12)
     rack-cors (1.0.2)
     rack-test (0.7.0)
       rack (>= 1.0, < 3)
